@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="jumbotron text-center" style="background-color: #1a1818!important">
+        <h1 style="font-family: Helvetica;color: #fafafa;margin-bottom: 25px">UEFA Champions League</h1>
+        <div class="row">
+            {% for team in teamsList %}
+                <div class="col-sm-3 text-right">
+                    <div class="col-sm-12" style=" padding: 5px;color:{{ (team.domestic_champ)?'red':'#fafafa' }};">
+                        {{ team.club }}&nbsp;&nbsp;({{ team.country }})
+                            <img src = "/images/{{ team.club }}.png" width="30px" style="border-radius: 25px" alt="img"/>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        {% if teamsByGroups is defined and teamsByGroups is not null %}
+        <div class="row" style="margin-bottom: 50px;">
+                <div class="col-sm-3" style="padding: 3px">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">
+                            Group A
+                        </a>
+                        {% for team in teamsByGroups.Group_A %}
+                        <a href="#" class="list-group-item">{{ team.club }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            <div class="col-sm-3" style="padding: 3px">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Group B
+                    </a>
+                    {% for team in teamsByGroups.Group_B %}
+                        <a href="#" class="list-group-item"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            {{ team.club }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-3" style="padding: 3px">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Group C
+                    </a>
+                    {% for team in teamsByGroups.Group_C %}
+                        <a href="#" class="list-group-item"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            {{ team.club }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-3" style="padding: 3px">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Group D
+                    </a>
+                    {% for team in teamsByGroups.Group_D %}
+                        <a href="#" class="list-group-item"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            {{ team.club }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-3" style="padding: 3px">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Group E
+                    </a>
+                    {% for team in teamsByGroups.Group_E %}
+                        <a href="#" class="list-group-item"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            {{ team.club }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-3" style="padding: 3px">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Group F
+                    </a>
+                    {% for team in teamsByGroups.Group_F %}
+                        <a href="#" class="list-group-item"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            {{ team.club }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-3" style="padding: 3px">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Group G
+                    </a>
+                    {% for team in teamsByGroups.Group_G %}
+                        <a href="#" class="list-group-item"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            {{ team.club }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-sm-3" style="padding: 3px">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        Group H
+                    </a>
+                    {% for team in teamsByGroups.Group_H %}
+                        <a href="#" class="list-group-item"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                            {{ team.club }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}

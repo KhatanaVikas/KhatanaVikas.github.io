@@ -1,0 +1,163 @@
+[
+  {
+    "club": "Arsenal",
+    "country": "ENG",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Astana",
+    "country": "KAZ",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Atletico",
+    "country": "ESP",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Barcelona",
+    "country": "ESP",
+    "domestic_champ": 1
+  },
+  {
+    "club": "BATE",
+    "country": "BLR",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Bayern",
+    "country": "GER",
+    "domestic_champ": 1
+  },
+  {
+    "club": "Benfica",
+    "country": "POR",
+    "domestic_champ": 1
+  },
+  {
+    "club": "Chelsea",
+    "country": "ENG",
+    "domestic_champ": 1
+  },
+  {
+    "club": "CSKA Moskva",
+    "country": "RUS",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Dinamo Zagreb",
+    "country": "CRO",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Dynamo Kyiv",
+    "country": "TUR",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Galatasaray",
+    "country": "TUR",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Gent",
+    "country": "BEL",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Juventus",
+    "country": "ITA",
+    "domestic_champ": 1
+  },
+  {
+    "club": "Leverkusen",
+    "country": "GER",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Lyon",
+    "country": "FRA",
+    "domestic_champ": 0
+  },
+  {
+    "club": "M. Tel-Aviv",
+    "country": "ISR",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Malmo",
+    "country": "SWE",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Man. City",
+    "country": "ENG",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Man. United",
+    "country": "ENG",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Monchengladbach",
+    "country": "GER",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Olympiacos",
+    "country": "GRE",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Paris",
+    "country": "FRA",
+    "domestic_champ": 1
+  },
+  {
+    "club": "Porto",
+    "country": "POR",
+    "domestic_champ": 0
+  },
+  {
+    "club": "PSV",
+    "country": "NED",
+    "domestic_champ": 1
+  },
+  {
+    "club": "Roma",
+    "country": "ITA",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Real Madrid",
+    "country": "ESP",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Sevilla",
+    "country": "ESP",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Shakhtar Donetsk",
+    "country": "UKR",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Valencia",
+    "country": "ESA",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Wolfsburg",
+    "country": "GER",
+    "domestic_champ": 0
+  },
+  {
+    "club": "Zenit",
+    "country": "RUS",
+    "domestic_champ": 1
+  }
+]
+
