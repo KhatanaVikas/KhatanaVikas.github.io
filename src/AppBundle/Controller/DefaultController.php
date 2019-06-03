@@ -7,13 +7,15 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends Controller
 {
     /**
+     * Description : Home page for this project
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
@@ -21,12 +23,13 @@ class DefaultController extends Controller
         $rootDir = $this->get('kernel')->getRootDir();
         $jsonPath = $rootDir.'/../src/AppBundle/JsonData/teamData.json';
 
+        //read all data from json file and store in array.
         $teamsList = json_decode(file_get_contents($jsonPath),true);
         $teamsByGroups = $this->getTeamsByGroups($teamsList);
         if(empty($teamsByGroups)){
             return $this->redirectToRoute('homepage');
         }
-        // replace this example code with whatever you need
+        // data for template
         $data = array(
             'teamsList'=>$teamsList,
             'teamsByGroups'=>$teamsByGroups
@@ -35,23 +38,41 @@ class DefaultController extends Controller
     }
 
     /**
+     * Description : Get randomly generated groups and teams
      * @param $teamsList
      * @return array
      */
     private function getTeamsByGroups($teamsList)
     {
         $groupedTeams = array(
-            'Group_A' => array(),
-            'Group_B' => array(),
-            'Group_C' => array(),
-            'Group_D' => array(),
-            'Group_E' => array(),
-            'Group_F' => array(),
-            'Group_G' => array(),
-            'Group_H' => array()
+            'Group A' => array(),
+            'Group B' => array(),
+            'Group C' => array(),
+            'Group D' => array(),
+            'Group E' => array(),
+            'Group F' => array(),
+            'Group G' => array(),
+            'Group H' => array()
         );
-        if(count($teamsList) != 32 || count($groupedTeams) !=8){
-            echo "Mismatched gropus and team count";die;
+
+        $moreThan8SameCountries = false;
+        $countriesArray = array();
+        foreach ($teamsList as $team){
+            $country = $team['country'];
+            if(array_key_exists($country,$countriesArray)){
+                $countriesArray[$country] +=1;
+            }else{
+                $countriesArray[$country] =1;
+            }
+        }
+        foreach ($countriesArray as $value){
+            if($value > 8){
+                $moreThan8SameCountries = true;
+            }
+        }
+        //some sanitary checks
+        if(count($teamsList) != 32 || count($groupedTeams) !=8 || $moreThan8SameCountries == true){
+            echo "Mismatched gropus and team count or more than 8 similar countries";die;
         }
         $domesticChampions = array();
         foreach ($teamsList as $key=>$team) {
@@ -59,6 +80,10 @@ class DefaultController extends Controller
                 array_push($domesticChampions,$team);
                 unset($teamsList[$key]);
             }
+        }
+        //some sanitary checks ...if domestic champs are not 8 , grouping is not possible
+        if(count($domesticChampions) !=8){
+            echo "domestic champs are not 8 , grouping is not possible";die;
         }
 
         $count = 1;
@@ -94,7 +119,7 @@ class DefaultController extends Controller
                 }
             }
             $count++;
-            //no random group could be generated in this session..lets reload page
+            //no random group could be generated retry.
             if($count>8){
                 return array();
             }

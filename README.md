@@ -19,20 +19,13 @@ To Run this symfony project on your local environment
         AllowOverride All
         Require all granted
     </Directory>
-
-
-    # uncomment the following lines if you install assets as symlinks
-    # or run into problems when compiling LESS/Sass/CoffeeScript assets
-    # <Directory /var/www/project>
-    #     Options FollowSymlinks
-    # </Directory>
-
 </VirtualHost>
 
 3. Add to etc/hosts
     127.0.1.1       local.randomteamselector.com
-    
-4. sudo service a2ensite     randomTeamGenerator.conf
+
+cd /etc/apache2/sites-available
+4. sudo service a2ensite randomTeamGenerator.conf
 5. sudo service apache2 restart
 6. visit local.randomteamselector.com/app_dev.php
 
