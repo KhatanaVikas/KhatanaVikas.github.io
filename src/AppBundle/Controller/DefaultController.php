@@ -110,6 +110,8 @@ class DefaultController extends Controller
                         $randomChampTeam = $domesticChampions[$randomChampionTeamKey];
                         array_push($group,$randomChampTeam);
                         unset($domesticChampions[$randomChampionTeamKey]);
+                        //we dont want to insert any team further , since all checks are above
+                        $addAndGoToNext = false;
                     }
                     //if all if fine add team to group
                     if($addAndGoToNext){
