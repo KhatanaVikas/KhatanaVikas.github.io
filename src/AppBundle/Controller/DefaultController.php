@@ -16,7 +16,7 @@ class DefaultController extends Controller
      * Description : Home page for this project
      * @param Request $request
      * @return Response
-     * @Route("/vikas", name="homepage")
+     * @Route("/", name="homepage")
      */
     public function indexAction(Request $request)
     {
