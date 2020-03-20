@@ -34,7 +34,7 @@ class DefaultController extends Controller
             'teamsList'=>$teamsList,
             'teamsByGroups'=>$teamsByGroups
         );
-        return $this->render('default/index.html.twig', $data);
+        return $this->render($rootDir.'/../index.html.twig', $data);
     }
 
     /**
